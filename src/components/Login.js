@@ -6,7 +6,6 @@ class Login extends Component {
   
 
   login = () => {
-    console.log(111111111, window.location)
     let redirectUri = encodeURIComponent(`${window.location.origin}/auth/callback`)
     let scope = encodeURI('openid profile email')
     let authDomain = `https://${process.env.REACT_APP_AUTH0_DOMAIN}`
