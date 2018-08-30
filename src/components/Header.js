@@ -22,6 +22,7 @@ let styles = {
     justifyContent: 'space-between',
     padding: '20px',
     borderBottom: '1px solid black',
+    backgroundColor: 'blue'
   },
   logo: {
     flex: 1,
