@@ -11,7 +11,7 @@ module.exports = {
         client_secret: process.env.AUTH0_CLIENT_SECRET,
         code: req.query.code,
         grant_type: 'authorization_code',
-        redirect_uri: `https://${req.headers.host}/auth/callback`
+        redirect_uri: `${req.protocol}://${req.headers.host}/auth/callback`
       }
 
       //here we are given the access token from auth0
