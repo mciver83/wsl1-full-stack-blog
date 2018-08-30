@@ -3,6 +3,7 @@ const axios = require('axios')
 module.exports = {
   auth: async (req, res) => {
     try {
+      console.log('this is the protocol:', req.protocol)
       //this is the domain for our auth0 application
       let authDomain = `https://${process.env.REACT_APP_AUTH0_DOMAIN}`
       //this is the data that auth0 needs in order to give us an access token that we can use to get user info
