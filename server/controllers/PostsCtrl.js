@@ -13,7 +13,7 @@ module.exports = PostsCtrl =  {
     try {
       let db = req.app.get('db')
       let { title, content } = req.body
-      let user_id = req.session.user ? req.session.user.id : 7
+      let user_id = req.session.user ? req.session.user.id : 1
       let newPost = { user_id, title, content }
 
       let postResponse = await db.createPost(newPost)

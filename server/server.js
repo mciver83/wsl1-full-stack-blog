@@ -3,6 +3,7 @@ const session = require('express-session')
 const massive = require('massive')
 const bodyParser = require('body-parser')
 require('dotenv').config()
+const path = require('path')
 
 const app = express()
 const port = 3005
@@ -23,6 +24,8 @@ app.use(session({
 
 app.use(bodyParser.json())
 
+app.use( express.static( `${__dirname}/../build` ) )
+
 app.get('/auth/callback', AuthCtrl.auth)
 app.get('/api/logout', (req, res) => {
   req.session.destroy()
@@ -35,6 +38,10 @@ app.get('/api/currentUser', (req, res) => {
 
 app.get('/api/posts', PostsCtrl.read)
 app.post('/api/posts', PostsCtrl.create)
+
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
 
 app.listen(port, () => {
   console.log('listening on port:', port)

@@ -31,7 +31,10 @@
   "license": "ISC",
   "nodemonConfig": {
     "ext": "js,sql",
-    "ignore": ["src/*", "public/*"]
+    "ignore": [
+      "src/*",
+      "public/*"
+    ]
   },
   "proxy": {
     "/auth/callback": {
