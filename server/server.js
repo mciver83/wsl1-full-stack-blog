@@ -16,6 +16,8 @@ massive(process.env.CONNECTION_STRING).then(db => {
   console.log('db connected!')
 })
 
+app.enable('trust proxy')
+
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
